@@ -1,6 +1,4 @@
 ﻿#region 1.feladat
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
 Console.ForegroundColor = ConsoleColor.Red;
 Console.WriteLine("1. Feladat");
 Console.ResetColor();
@@ -86,7 +84,8 @@ for (int i = 0; i < N; i++)
             Console.ResetColor();
         }
 
-        else {
+        else
+        {
             Console.Write(gombak[i, j]);
         }
     }
@@ -107,22 +106,22 @@ string irany = "";
 
 int minGombaÉszak = 0, minGombaKelet = 0, minGombaDél = 0, minGombaNyugat = 0;
 
-for (int j = 0; j < M; j++) // Észak (felső sor)
+for (int j = 0; j < M; j++)
 {
     minGombaÉszak += gombak[0, j];
 }
 
-for (int i = 0; i < N; i++) // Kelet (jobb oldali oszlop)
+for (int i = 0; i < N; i++)
 {
     minGombaKelet += gombak[i, M - 1];
 }
 
-for (int j = 0; j < M; j++) // Dél (alsó sor)
+for (int j = 0; j < M; j++)
 {
     minGombaDél += gombak[N - 1, j];
 }
 
-for (int i = 0; i < N; i++) // Nyugat (bal oldali oszlop)
+for (int i = 0; i < N; i++)
 {
     minGombaNyugat += gombak[i, 0];
 }
@@ -274,14 +273,14 @@ Console.ResetColor();
 
 int minGomba3x3 = int.MaxValue;
 
-for (int i = 0; i < N - 2; i++) // sorok
+for (int i = 0; i < N - 2; i++)
 {
-    for (int j = 0; j < M - 2; j++) // oszlopok
+    for (int j = 0; j < M - 2; j++)
     {
         int teruletOsszeg = 0;
-        for (int di = 0; di < 3; di++) // 3x3 terület sorai
+        for (int di = 0; di < 3; di++)
         {
-            for (int dj = 0; dj < 3; dj++) // 3x3 terület oszlopai
+            for (int dj = 0; dj < 3; dj++)
             {
                 teruletOsszeg += gombak[i + di, j + dj];
             }
